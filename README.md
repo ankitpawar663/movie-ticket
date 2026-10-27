@@ -4,13 +4,13 @@ React (Vite) + Express + MongoDB/Mongoose. Browse movies, pick showtimes, choose
 **Bookings are demo only - no real payment is processed.**
 
 ## Prerequisites
-Node.js 18+ (LTS), MongoDB running locally (`mongodb://127.0.0.1:27017`) or a free MongoDB Atlas URI.
+Node.js 18+ (LTS). In development, the API uses a temporary in-memory MongoDB when `MONGO_URI` is unset; set `MONGO_URI` in `server/.env` to use a local MongoDB or MongoDB Atlas for persistent data.
 
 ## Setup
 ```bash
 npm install                 # root (concurrently)
 npm run install:all         # installs root, server and client deps
-cp server/.env.example server/.env   # then set JWT_SECRET to a long random string
+cp server/.env.example server/.env   # optionally set MONGO_URI for persistent data
 cp client/.env.example client/.env
 npm run seed                # demo movies, cinemas, shows, users
 npm run dev                 # API http://localhost:5000  |  Web http://localhost:5173
